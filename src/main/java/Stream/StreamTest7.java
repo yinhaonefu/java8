@@ -10,8 +10,8 @@ public class StreamTest7 {
     public static void main(String[] args) {
         List<String> list = Arrays.asList("hello","world","helloworld");
 
-//        list.stream().mapToInt(item -> item.length()).filter(length -> length == 5)
-//                .findFirst().ifPresent(System.out::println);
+        list.stream().mapToInt(item -> item.length()).filter(length -> length == 5)
+                .findFirst().ifPresent(System.out::println);
 
         list.stream().mapToInt(item -> {
             int length = item.length();
