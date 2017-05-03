@@ -18,7 +18,22 @@ public class ComparatorTest {
 //        System.out.println(list);
 
         //使用lambda表达式 按长度倒序 增加了reversed操作，编译器不确定中间参数的类型，需要显示指定String类型
-        Collections.sort(list, Comparator.comparingInt((String item) -> item.length()).reversed());
+//        Collections.sort(list, Comparator.comparingInt((String item) -> item.length()).reversed());
+//
+//        System.out.println(list);
+
+//        list.sort(Comparator.comparingInt(String::length).reversed());
+//
+//        System.out.println(list);
+
+        //先按长度升序，再忽略大小写按字母排序
+//        Collections.sort(list, Comparator.comparingInt(String::length).thenComparing(String.CASE_INSENSITIVE_ORDER));
+//
+//        System.out.println(list);
+
+        //同上
+        Collections.sort(list, Comparator.comparingInt(String::length).
+                thenComparing((item1, item2) -> item1.toLowerCase().compareTo(item2.toLowerCase())));
 
         System.out.println(list);
     }
